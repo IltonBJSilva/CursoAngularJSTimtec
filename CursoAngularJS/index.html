@@ -5,17 +5,24 @@
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	</head>
-	<body class="contanier">
+	<body class="contanier" ng-app="aplicacao">
 		<div class="header-inner">
-			<h1 style="text-aling> center; color:blue;">
+			<h1 style="text-align: center; color: blue;">
 				Bem vindo ao curso
 			</h1>
+		</div>
+		<div ng-controller="PrimeiroController">
+			Olá, {{nome}} seja bem vindo!
 		</div>
 		<div class="container-fluid container-fixed-lg footer">
 			<div class="copyright sm-text-center">
 				<p class="small no-margin pull-left sm-pull-reset">
-					<span class="hint-text">Cpright @ 2015</span>
+					<span class="hint-text">Copyright @ 2015</span>
 			</div>
 		</div>
+		<script src="scripts/libs/angular.js"></script>
+		<script src="scripts/app.js"></script>
+		<script src="scripts/primeiro-controller.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 	</body>
 </html>
