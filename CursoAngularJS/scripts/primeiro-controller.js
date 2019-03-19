@@ -12,6 +12,10 @@ angular.module('aplicacao').controller('PrimeiroController',function($scope) {
     $scope.iniciado = true;
   }
   $scope.submeter = function(){
-    $scope.alunos.push($scope.nome_aluno);
-  }
+    if($scope.form_1.$valid){
+      $scope.alunos.push($scope.nome_aluno);
+    }else{
+      alert('Preencha o formulario corretamente');
+    }
+   }
 });
