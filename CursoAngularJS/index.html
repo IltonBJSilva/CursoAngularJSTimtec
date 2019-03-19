@@ -16,7 +16,11 @@
 			<p ng-show="trab">Curso em Andamento</p>
 			<p ng-hide="trab">Curso em finalizado</p>
 			<p ng-if="trab">Aguarde o proximo curso</p>
-
+			<br><br>
+			<li ng-repeat="aluno in alunos">
+				{{aluno}}
+			</li>
+			<br><br>
 		</div>
 		<div class="container-fluid container-fixed-lg footer">
 			<div class="copyright sm-text-center">
