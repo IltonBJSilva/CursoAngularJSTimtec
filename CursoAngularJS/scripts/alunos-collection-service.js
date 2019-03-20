@@ -1,5 +1,7 @@
 angular.module('aplicacao').service('AlunosCollectionService', function($filter){
-  $scope.alunos = [{'nome': 'Elian', 'idade': 9},
+  var ordenadoPorIdade = false;
+  var ordenadoPorNome = false;
+  var alunos = [{'nome': 'Elian', 'idade': 9},
                    {'nome': 'Ilton', 'idade': 11},
                    {'nome': 'João', 'idade': 11},
                    {'nome': 'Francisco', 'idade': 14},
@@ -13,13 +15,13 @@ angular.module('aplicacao').service('AlunosCollectionService', function($filter)
     alunos.push(aluno);
   }
 
-  thisordenarPorNome =  function(){
-    $scope.ordenadoPorNome = !$scope.ordenadoPorNome;
-    $scope.alunos = $filter = ('orderBy')($scope.alunos,'nome', $scope.ordenadoPorNome);
+  this.ordenarPorNome =  function(){
+    ordenadoPorNome = !ordenadoPorNome;
+    alunos = $filter = ('orderBy')(alunos,'nome', ordenadoPorNome);
   }
   this.ordernarPorIdade = function(){
-    $scope.ordenadoPorIdade = !$scope.ordenadoPorIdade;
-    $scope.alunos = $filter = ('orderBy')($scope.alunos,'idade',$scope.ordenadoPorIdade);
+    ordenadoPorIdade = !ordenadoPorIdade;
+    alunos = $filter = ('orderBy')(alunos,'idade',ordenadoPorIdade);
   }
 
 });

@@ -64,30 +64,32 @@
 				Iniciar
 			</button>
 			<div ng-show="iniciado">
-				<h3>Nova Inscrição no Curso</h3>
-				<form name="form_1">
-					<div class="row">
-						<div class="col-md-4">
-							<div class="form-group form-group">
-								<label>Nome</label>
-								<input class="form-control" type="text" id="nome_aluno" name="nome_aluno" ng-model="nome_aluno">
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="form-group form-group-default">
-								<label>Idade</label>
-								<input class="form-control" type="number" id="idade_aluno" ng-model="idade_aluno ">
-						</div>
-					</div>
-					<div class="row">
-							<div class="col-md-4">
-								<button ng-click="submeter()" class="btn btn-primary">adicionar </button>
-							</div>
-					</div>
-				</form>
+
+		 </div>
+		 <div class="well" ng-controller="NovaInscricaoController">
+			 <h3>Nova Inscrição no Curso</h3>
+			 <form name="form_1">
+				 <div class="row">
+					 <div class="col-md-4">
+						 <div class="form-group form-group">
+							 <label>Nome</label>
+							 <input class="form-control" type="text" id="nome_aluno" name="nome_aluno" ng-model="nome_aluno">
+						 </div>
+					 </div>
+					 <div class="col-md-4">
+						 <div class="form-group form-group-default">
+							 <label>Idade</label>
+							 <input class="form-control" type="number" id="idade_aluno" ng-model="idade_aluno ">
+					 </div>
+				 </div>
+				 <div class="row">
+						 <div class="col-md-4">
+							 <button ng-click="submeter()" class="btn btn-primary">adicionar </button>
+						 </div>
+				 </div>
+			 </form>
 		 </div>
 		</div>
-
 		<div class="container-fluid container-fixed-lg footer">
 			<div class="well" ng-controller="PrevisaoTempoController">
 				<h3>Demonstrando o ng-controller</h3>
@@ -112,5 +114,6 @@
 		<script src="scripts/libs/ngResource.js"></script>
 		<script src="script/alunos-collection-service.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.min.js"></script>
+		<script src="script/nova-inscricao-controller.js"></script>
 	</body>
 </html>

@@ -1,8 +1,10 @@
-angular.module('aplicacao').controller('PrimeiroController', function($scope, $filter){
+angular.module('aplicacao').controller('PrimeiroController', function($scope, $filter, AlunosCollectionService){
 	$scope.nome = 'Ilton Batista';
 	var nome = "Aleatorio";
 
 	$scope.iniciado = true;
+
+	$scope.alunos = AlunosCollectionService.getAlunos();
 
 	$scope.alunos = [{'nome': 'Elian', 'idade': 9},
 	                 {'nome': 'Ilton', 'idade': 11},
@@ -20,15 +22,13 @@ $scope.hoje = new Date();
 		$scope.iniciado = true;
 	};
 
-	$scope.submeter = function() {
-		if($scope.form_1.$valid) {
-			novo_aluno = {};
-			novo_aluno['nome'] = $scope.nome_aluno;
-			novo_aluno['idade'] = parseInt($scope.idade_aluno);
-			$scope.alunos.push(novo_aluno);
-		} else {
-			alert("Preencha o formulário corretamente");
-		}
-	};
+	$scope.ordenarPorNome =  function(){
+		AlunosCollectionService.ordenarPorNome();
+		$scope.alunos = AlunosCollectionService.getAlunos();
+	}
+	$scope.ordernarPorIdade = function(){
+		AlunosCollectionService.ordernarPorIdade();
+		$scope.alunos = $filter = ('orderBy')($scope.alunos,'idade',$scope.ordenadoPorIdade);
+	}
 
 });
