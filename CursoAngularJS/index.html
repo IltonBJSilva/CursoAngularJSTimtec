@@ -42,11 +42,17 @@
 					  	<th>
 						  	Nome
 					   	</th>
+							<th>
+								Idade
+							</th>
 					 	</tr>
 							<tr ng-repeat="aluno in alunos | filter : filtro">
 								<td>
-						    	{{aluno}}
+						    	{{aluno.nome}}
 						   	</td>
+								<td>
+									{{aluno.idade}}
+								</td>
 						</div
 						</tr>
 					</table>
@@ -66,6 +72,11 @@
 								<label>Nome</label>
 								<input class="form-control" type="text" id="nome_aluno" name="nome_aluno" ng-model="nome_aluno">
 							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group form-group-default">
+								<label>Idade</label>
+								<input class="form-control" type="number" id="idade_aluno" ng-model="idade_aluno "> 
 						</div>
 					</div>
 					<div class="row">
