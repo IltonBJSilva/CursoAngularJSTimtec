@@ -21,10 +21,14 @@
 						<p ng-show="iniciado">Curso em Andamento</p>
 						<p ng-hide="iniciado">Curso em finalizado</p>
 						<p ng-if="!iniciado">Aguarde o proximo curso</p>
+						<p> Preço do curso: {{valor | currency : 'R$'}}</p>
+						<p>Data do curso: {{data | date:'dd/MM/yyyy'}}</p>
 					</div>
 				</div>
 				<div>
-
+					<label>Definir Preço:</label>
+					<input type="number" id="valor" name="valor" ng-model="valor">
+					<input type="date" id="data" name="data" ng-model="data">
 				</div>
 				<br><br>
 				<div ng-show="iniciado" ng-click="finalizar()">
