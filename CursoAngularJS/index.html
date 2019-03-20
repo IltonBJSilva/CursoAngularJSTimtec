@@ -21,9 +21,16 @@
 					<p ng-show="iniciado">Curso em Andamento!</p>
 					<p ng-hide="iniciado">Curso Finalizado!</p>
 					<p ng-if="!iniciado">Aguarde o próximo curso!</p>
+					<p> Preço do curso: {{valor | currency : 'R$'}}</p>
+					<p>Data do curso: {{data | date:'dd/MM/yyyy'}}</p>
 				</div>
 			</div>
-			<h3>Alunos Cadastrados</h3>
+		<div>
+			<label>Definir Preço:</label>
+			<input type="number" id="valor" name="valor" ng-model="valor">
+			<input type="date" id="data" name="data" ng-model="data">
+		</div>
+		<h3>Alunos Cadastrados</h3>
 			<div class="table-responsive">
 				<table class="table table-striped">
 					<tr>
@@ -43,10 +50,10 @@
 			</button>
 			<button ng-hide="iniciado" ng-click="iniciar()" class="btn btn-success">
 				Iniciar
-			</button>			
+			</button>
 		</div>
 		<div class="container-fluid container-fixed-lg footer">
-			<div class="copyright sm-text-center">	
+			<div class="copyright sm-text-center">
 				<p class="small no-margin pull-left sm-pull-reset">
 					<span class="hint-text">Copyright @ 2015</span>
 				</p>
