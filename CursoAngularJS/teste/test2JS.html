@@ -1,4 +1,4 @@
-angular.module('aplicacao').controller('PrimeiroController', function($scope, $filter){
+angular.module('aplicacao').controller('PrimeiroController', function($scope $filter){
 	$scope.nome = 'Ilton Batista';
 	var nome = "Aleatorio";
 
