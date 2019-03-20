@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	</head>
+	<body class="contanier" ng-app="aplicacao">
+		<div class="header-inner">
+			<h1 style="text-align: center; color: blue;">
+				Bem vindo ao curso
+			</h1>
+		</div>
+		<div ng-controller="PrimeiroController">
+			<p>Olá, {{nome}} seja bem vindo!</p>
+			<p ng-show="iniciado">Curso em Andamento</p>
+			<p ng-hide="iniciado">Curso em finalizado</p>
+			<p ng-if="iniciado">Aguarde o proximo curso</p>
+			<br><br>
+			<div ng-show="iniciado" ng-click="iniciado()">
+				<h3>Alunos que iniciou o curso junto com você</h3><br>
+			</div>
+			<li ng-show="iniciado" ng-click="iniciar()" ng-repeat="aluno in alunos">
+				{{aluno}}
+			</li>
+			<br><br>
+			<button ng-show="iniciado" ng-click="finalizar()" class="btn btn-danger">
+				Finalizar
+			</button>
+			<button ng-hide="iniciado" ng-click="iniciar()" class="btn btn-success">
+				Iniciar
+			</button>
+			<div ng-show="iniciado" ng-click="finalizar()">
+				Finalizar em forma de div
+			</div>
+		</div>
+		<div class="container-fluid container-fixed-lg footer">
+			<div class="copyright sm-text-center">
+				<p class="small no-margin pull-left sm-pull-reset">
+					<span class="hint-text">Copyright @ 2015</span>
+			</div>
+		</div>
+		<script src="scripts/libs/angular.js"></script>
+		<script src="scripts/app.js"></script>
+		<script src="scripts/primeiro-controller.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	</body>
+</html>

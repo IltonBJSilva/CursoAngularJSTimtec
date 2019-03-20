@@ -23,14 +23,28 @@
 						<p ng-if="!iniciado">Aguarde o proximo curso</p>
 					</div>
 				</div>
+				<div>
+
+				</div>
 				<br><br>
 				<div ng-show="iniciado" ng-click="finalizar()">
 					<div ng-show="iniciado" ng-click="iniciado()">
-						<h3>Alunos que iniciou o curso junto com você</h3><br>
+						<h3>Alunos Cadastrado</h3><br>
+						<div class="table-responsive">
+							<table class="table table-striped">
+								<tr>
+									<th>
+										Nome
+									</th>
+								</tr>
+								<tr ng-repeat="aluno in alunos">
+									<td>
+										{{aluno}}
+									</td>
+								</tr>
+							</table>
+						</div>
 					</div>
-					<li ng-repeat="aluno in alunos">
-						{{aluno}}
-					</li>
 				</div>
 			<br><br>
 			<button ng-show="iniciado" ng-click="finalizar()" class="btn btn-danger">
