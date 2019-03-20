@@ -9,7 +9,8 @@ angular.module('aplicacao').controller('PrimeiroController', function($scope, $f
 	                 {'nome': 'João', 'idade': 11},
 	                 {'nome': 'Francisco', 'idade': 14},
 	                 {'nome': 'Sara', 'idade': 10},
-	                 {'nome': 'Andressa', 'idade': 12}];	$scope.hoje = new Date();
+	                 {'nome': 'Andressa', 'idade': 12}];
+$scope.hoje = new Date();
 
 	$scope.finalizar = function(){
 		$scope.iniciado = false;
@@ -18,15 +19,6 @@ angular.module('aplicacao').controller('PrimeiroController', function($scope, $f
 	$scope.iniciar = function() {
 		$scope.iniciado = true;
 	};
-
-	$scope.ordenarPorNome =  function(){
-		$scope.ordenadoPorNome = !$scope.ordenadoPorNome;
-		$scope.alunos = $filter = ('orderBy')($scope.alunos,'nome', $scope.ordenadoPorNome);
-	}
-	$scope.ordernarPorIdade = function(){
-		$scope.ordenadoPorIdade = !$scope.ordenadoPorIdade;
-		$scope.alunos = $filter = ('orderBy')($scope.alunos,'idade',$scope.ordenadoPorIdade);
-	}
 
 	$scope.submeter = function() {
 		if($scope.form_1.$valid) {
