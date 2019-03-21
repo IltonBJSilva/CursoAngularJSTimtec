@@ -5,7 +5,7 @@
   Referencia ao enunciado/origem do exercicio: https://cursos.timtec.com.br/course/desenvolvimento-web-com-angularjs/intro
 */
 
-angular.module('aplicacao').controller('PrimeiroController', function($scope, $filter, AlunosCollectionService){
+angular.module('aplicacao').controller('ListagemAlunosController', function($scope, $filter, AlunosCollectionService){
 	$scope.nome = 'Ilton Batista';
 	var nome = "Aleatorio";
 

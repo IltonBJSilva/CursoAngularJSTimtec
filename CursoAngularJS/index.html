@@ -17,95 +17,18 @@
 				Bem Vindo ao Curso de Desenvolvimento WEB com Angular JS
 			</h1>
 		</div>
-		<div ng-controller="PrimeiroController" class="well">
-			<h3>Olá, {{nome}} seja bem vindo!</h3>
-			<div ng-class="{'panel panel-primary':iniciado, 'panel panel-danger':!iniciado}" ng-show="iniciado">
-				<div class="panel-heading">
-					<h3 class="panel-title">Situação do Curso</h3>
-				</div>
-				<div class="panel-body">
-					<p ng-show="iniciado">Curso em Andamento!</p>
-					<p ng-hide="iniciado">Curso Finalizado!</p>
-					<p ng-if="!iniciado">Aguarde o próximo curso!</p>
-					<p> Preço do curso: {{valor | currency : 'R$'}}</p>
-					<p>Data do curso: {{data | date:'dd/MM/yyyy'}}</p>
-				</div>
+		<nav class="navbar navbar-default" ng-controller="MenuController">
+			<div class="collapse navbar-collapse" id="menu">
+				<ul>
+					<li><a ng-click="irInicio()">Inicio</li>
+					<li><a ng-click="irListagem()">Alunos</li>
+					<li><a ng-click="irCadastro()">Cadastro</a></li>
+					<li><a ng-click="irPrevisao()">Previsão do Tempo<a></li>
+				</ul>
 			</div>
-			<div ng-show="iniciado">
-					<label>Definir Preço:</label>
-					<input type="number" id="valor" name="valor" ng-model="valor">
-					<input type="date" id="data" name="data" ng-model="data">
-				</div>
-				<div ng-show="iniciado">
-					<h3>Alunos Cadastrados</h3>
-					<label>Filtrar por nome</label>
-					<input type="text" ng-model="filtro">
-				</div>
-				<div class="table-responsive">
-				<div>
-					<table class="table table-striped">
-						<tr>
-					  	<th ng-click="ordenarPorNome()">
-						  	Nome
-					   	</th>
-							<th ng-click="ordernarPorIdade()">
-								Idade
-							</th>
-					 	</tr>
-							<tr ng-repeat="aluno in alunos | filter : filtro">
-								<td>
-						    	{{aluno.nome}}
-						   	</td>
-								<td>
-									{{aluno.idade}}
-								</td>
-						</div>
-					</tr>
-					</table>
-				</div>
-			<button ng-show="iniciado" ng-click="finalizar()" class="btn btn-danger">
-				Finalizar
-			</button>
-			<button ng-hide="iniciado" ng-click="iniciar()" class="btn btn-success">
-				Iniciar
-			</button>
-			<div ng-show="iniciado">
-
-		 </div>
-		 <div class="well" ng-controller="NovaInscricaoController" ng-show="iniciado">
-			 <h3>Nova Inscrição no Curso</h3>
-			 <form name="form_1">
-				 <div class="row">
-					 <div class="col-md-4">
-						 <div class="form-group form-group">
-							 <label>Nome</label>
-							 <input class="form-control" type="text" id="nome_aluno" name="nome_aluno" ng-model="nome_aluno">
-						 </div>
-					 </div>
-					 <div class="col-md-4">
-						 <div class="form-group form-group-default">
-							 <label>Idade</label>
-							 <input class="form-control" type="number" id="idade_aluno" ng-model="idade_aluno ">
-					 </div>
-				 </div>
-				 <div class="row">
-						 <div class="col-md-4">
-							 <button ng-click="submeter()" class="btn btn-primary">adicionar </button>
-						 </div>
-				 </div>
-			 </form>
-		 </div>
-		</div>
+		</nav>
+		<div ui-view></div>
 		<div class="container-fluid container-fixed-lg footer">
-			<div class="well" ng-controller="PrevisaoTempoController">
-				<h3>Demonstrando o ng-controller</h3>
-				<h3>Previsão do tempo</h3>
-				<h4> São Paulo, Brasil</h4>
-				<h4>Local: {{tempo.name}}</h4>
-				<h4>Temperatura: {{tempo.main.temp}}</h4>
-				<h4>Minima: {{tempo.main.temp_min}} C e Maxima: {{tempo.main.temp_max}} C</h4>
-
-			</div>
 			<div class="copyright sm-text-center">
 				<p class="small no-margin pull-left sm-pull-reset">
 					<span class="hint-text">Copyright @ 2015</span>
@@ -120,7 +43,10 @@
 		<script src="scripts/libs/bootstrap.js"></script>
 		<script src="scripts/libs/ngResource.js"></script>
 		<script src="scripts/alunos-collection-service.js"></script>
+		<script src="scripts/libs/ui-bootstrap-tpls-0.12.1.min.js"></script>
+		<script src="scripts/libs/angular-ui-router.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.min.js"></script>
 		<script src="scripts/nova-inscricao-controller.js"></script>
+		<script src="scripts/menu-controller.js"></script>
 	</body>
 </html>
