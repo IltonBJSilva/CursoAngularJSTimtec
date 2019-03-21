@@ -10,6 +10,7 @@ angular.module('aplicacao').controller('ListagemAlunosController', function($sco
 	var nome = "Aleatorio";
 
 	$scope.iniciado = true;
+	$scope.cadastrar = false;
 
 	$scope.alunos = AlunosCollectionService.getAlunos();
 
@@ -36,6 +37,10 @@ $scope.hoje = new Date();
 	$scope.ordernarPorIdade = function(){
 		AlunosCollectionService.ordernarPorIdade();
 		$scope.alunos = $filter = ('orderBy')($scope.alunos,'idade',$scope.ordenadoPorIdade);
+	}
+
+	$scope.exibeCadastro = function(){
+		$scope.cadastrar = !$scope.cadastrar;
 	}
 
 });
