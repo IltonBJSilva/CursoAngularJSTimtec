@@ -1,3 +1,10 @@
+/*
+  Nome do autor: Ilton Batista da Silva Júnior
+  Data de criação do arquivo: 21/03/2019
+  Objetivo sucinto do programa: script para submter novo aluno 
+  Referencia ao enunciado/origem do exercicio: https://cursos.timtec.com.br/course/desenvolvimento-web-com-angularjs/intro
+*/
+
 angular.module('aplicacao').controller('NovaInscricaoController',function($scope, AlunosCollectionService){
 
   $scope.submeter = function() {

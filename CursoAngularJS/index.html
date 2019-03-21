@@ -1,3 +1,9 @@
+<!--
+  Nome do autor: Ilton Batista da Silva Júnior
+  Data de criação do arquivo: 21/03/2019
+  Objetivo sucinto do programa: codigo html para abrir na web com a estrutura do site
+  Referencia ao enunciado/origem do exercicio: https://cursos.timtec.com.br/course/desenvolvimento-web-com-angularjs/intro
+-->
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -66,7 +72,7 @@
 			<div ng-show="iniciado">
 
 		 </div>
-		 <div class="well" ng-controller="NovaInscricaoController">
+		 <div class="well" ng-controller="NovaInscricaoController" ng-show="iniciado">
 			 <h3>Nova Inscrição no Curso</h3>
 			 <form name="form_1">
 				 <div class="row">
@@ -106,14 +112,15 @@
 				</p>
 			</div>
 		</div>
+		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 		<script src="scripts/libs/angular.js"></script>
 		<script src="scripts/app.js"></script>
 		<script src="scripts/primeiro-controller.js"></script>
 		<script src="scripts/previsao-tempo-controller.js"></script>
 		<script src="scripts/libs/bootstrap.js"></script>
 		<script src="scripts/libs/ngResource.js"></script>
-		<script src="script/alunos-collection-service.js"></script>
+		<script src="scripts/alunos-collection-service.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.min.js"></script>
-		<script src="script/nova-inscricao-controller.js"></script>
+		<script src="scripts/nova-inscricao-controller.js"></script>
 	</body>
 </html>

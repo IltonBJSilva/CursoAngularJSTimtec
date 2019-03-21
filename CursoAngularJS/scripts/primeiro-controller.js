@@ -1,3 +1,10 @@
+/*
+  Nome do autor: Ilton Batista da Silva Júnior
+  Data de criação do arquivo: 21/03/2019
+  Objetivo sucinto do programa: codigo html para abrir na web com a estrutura do site
+  Referencia ao enunciado/origem do exercicio: https://cursos.timtec.com.br/course/desenvolvimento-web-com-angularjs/intro
+*/
+
 angular.module('aplicacao').controller('PrimeiroController', function($scope, $filter, AlunosCollectionService){
 	$scope.nome = 'Ilton Batista';
 	var nome = "Aleatorio";
